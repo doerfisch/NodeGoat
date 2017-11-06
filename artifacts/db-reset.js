@@ -15,7 +15,7 @@ var USERS_TO_INSERT = [
         "userName": "admin",
         "firstName": "Node Goat",
         "lastName": "Admin",
-        "password": "Admin_321",
+        "password": "Admin_123",
         //"password" : "$2a$10$8Zo/1e8KM8QzqOKqbDlYlONBOzukWXrM.IiyzqHRYDXqwB3gzDsba", // Admin_123
         "isAdmin": true
     }, {
