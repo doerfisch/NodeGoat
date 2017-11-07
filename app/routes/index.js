@@ -4,6 +4,8 @@ var BenefitsHandler = require("./benefits");
 var ContributionsHandler = require("./contributions");
 var AllocationsHandler = require("./allocations");
 var MemosHandler = require("./memos");
+var StockHandler = require("./stock");
+var ItemsHandler = require("./items");
 
 var ErrorHandler = require("./error").errorHandler;
 
@@ -56,6 +58,14 @@ var exports = function(app, db) {
      app.get("/benefits", isLoggedIn, isAdmin, benefitsHandler.displayBenefits);
      app.post("/benefits", isLoggedIn, isAdmin, benefitsHandler.updateBenefits);
      */
+
+    // Stock Page
+    app.get("/stock", isLoggedIn, stockHandler.displayStock);
+    app.post("/stock", isLoggedIn, stockHandler.updateStock);
+
+    // Items Page
+    app.get("/items", isLoggedIn, itemsHandler.displayItems);
+    app.post("/items", isLoggedIn, itemsHandler.updateItems);
 
     // Allocations Page
     app.get("/allocations/:userId", isLoggedIn, allocationsHandler.displayAllocations);

@@ -37,23 +37,23 @@
                 <thead>
                     <tr>
                         <th class="col-md-1">Item ID</th>
-                        <th class="col-md-2">Description</th>
-                        <th class="col-md-7">Price</th>
+                        <th class="col-md-7">Description</th>
+                        <th class="col-md-2">Price</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    {% for user in users %}
+                    {% for item in stock %}
 
                     <tr>
-                        <td>{{user._id.toString()}}</td>
-                        <td>{{user.firstName}}</td>
-                        <td>{{user.lastName}}</td>
+                        <td>{{item._id.toString()}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.price}}</td>
                         <td>
                             <form method="POST" action="/stock">
                                 <div class="input-group">
-                                    <input type="hidden" name="userId" value="{{user._id.toString()}}"></input>
-                                    <input type="date" class="form-control" name="benefitStartDate" value="{{user.benefitStartDate}}"></input>
+                                    <input type="hidden" name="itemId" value="{{item._id.toString()}}"></input>
+                                    <input type="number" class="form-control" name="itemPrice" value="{{item.price}}"></input>
                                     <span class="input-group-btn">
                                         <button type="submit" class="btn btn-default">Save</button>
                                     </span>
