@@ -53,12 +53,14 @@ var exports = function(app, db) {
     app.post("/contributions", isLoggedIn, contributionsHandler.handleContributionsUpdate);
 
     // Benefits Page
+    /*
     app.get("/benefits", isLoggedIn, benefitsHandler.displayBenefits);
     app.post("/benefits", isLoggedIn, benefitsHandler.updateBenefits);
-    /* Fix for A7 - checks user role to implement  Function Level Access Control
+    */
+     //Fix for A7 - checks user role to implement  Function Level Access Control
      app.get("/benefits", isLoggedIn, isAdmin, benefitsHandler.displayBenefits);
      app.post("/benefits", isLoggedIn, isAdmin, benefitsHandler.updateBenefits);
-     */
+
 
     // Stock Page
     app.get("/stock", isLoggedIn, stockHandler.displayStock);
