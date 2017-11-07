@@ -35,10 +35,10 @@ function StockHandler(db) {
                 return res.render("stock", {
                     items: items
                 });
+                return res.render("stock", data);
             });
 
-	    		return res.render("stock", data);
-	    	});
+		});
     };
 }
 
