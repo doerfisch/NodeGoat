@@ -21,7 +21,7 @@ function StockHandler(db) {
     this.updateStock = function(req, res, next) {
     	var itemId = req.body._id;
     	//var description = req.body.description;
-    	var price = req.body.price;
+    	var price = parseInt(req.body.price);
 
     	stockDAO.updateStock(itemId, price, function(error) {
     	    if (error) return next(error);
