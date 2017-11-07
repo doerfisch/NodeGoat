@@ -43,7 +43,7 @@ function BenefitsHandler(db) {
 
 	    		return res.render("stock", data);
 	    	});
-        };
+        });
     };
 }
 
