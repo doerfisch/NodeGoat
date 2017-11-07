@@ -39,7 +39,6 @@ function StockHandler(db) {
 
 	    		return res.render("stock", data);
 	    	});
-        });
     };
 }
 
