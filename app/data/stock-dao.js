@@ -13,8 +13,8 @@ function StockDAO(db) {
     var stockCol = db.collection("stock");
 
     this.getAllStocks = function(callback) {
-        stockCol.find().toArray(function(err, item) {
-            callback(null, item);
+        stockCol.find().toArray(function(err, items) {
+            callback(null, items);
         });
     };
 

@@ -12,10 +12,7 @@ function StockHandler(db) {
     		if (error) return next(error);
 
     		return res.render("stock", {
-    			users: items,
-    			user: {
-    				isAdmin: true
-    			}
+    			items: item
     		});
     	});
     };
