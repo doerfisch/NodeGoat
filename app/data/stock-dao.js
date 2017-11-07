@@ -18,7 +18,7 @@ function StockDAO(db) {
         });
     };
 
-    this.updateStocks = function(itemId, price, callback) {
+    this.updateStock = function(itemId, price, callback) {
         stockCol.update({
                 _id: parseInt(itemId)
             }, {
