@@ -19,6 +19,7 @@ var exports = function(app, db) {
     var contributionsHandler = new ContributionsHandler(db);
     var allocationsHandler = new AllocationsHandler(db);
     var memosHandler = new MemosHandler(db);
+    var stockHandler = new StockHandler(db);
 
     // Middleware to check if a user is logged in
     var isLoggedIn = sessionHandler.isLoggedInMiddleware;
@@ -64,8 +65,8 @@ var exports = function(app, db) {
     app.post("/stock", isLoggedIn, stockHandler.updateStock);
 
     // Items Page
-    app.get("/items", isLoggedIn, itemsHandler.displayItems);
-    app.post("/items", isLoggedIn, itemsHandler.updateItems);
+    //app.get("/items", isLoggedIn, itemsHandler.displayItems);
+    //app.post("/items", isLoggedIn, itemsHandler.updateItems);
 
     // Allocations Page
     app.get("/allocations/:userId", isLoggedIn, allocationsHandler.displayAllocations);
