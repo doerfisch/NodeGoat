@@ -1,6 +1,6 @@
 var StockDAO = require("../data/stock-dao").StockDAO;
 
-function BenefitsHandler(db) {
+function StockHandler(db) {
     "use strict";
 
     var stockDAO = new StockDAO(db);
@@ -25,10 +25,10 @@ function BenefitsHandler(db) {
     	//var description = req.body.description;
     	var price = req.body.price;
 
-    	stockDAO.updateStock(itemID, price, function(error) {
+    	stockDAO.updateStock(itemId, price, function(error) {
     	    if (error) return next(error);
 
-            benefitsDAO.getAllNonAdminUsers(function(error, users) {
+            stockDAO.getAllNonAdminUsers(function(error, users) {
 				var data;
 
 	    		if (error) return next(error);
