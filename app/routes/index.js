@@ -5,7 +5,7 @@ var ContributionsHandler = require("./contributions");
 var AllocationsHandler = require("./allocations");
 var MemosHandler = require("./memos");
 var StockHandler = require("./stock");
-var ItemsHandler = require("./items");
+//var ItemsHandler = require("./items");
 
 var ErrorHandler = require("./error").errorHandler;
 
