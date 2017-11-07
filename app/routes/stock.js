@@ -19,25 +19,23 @@ function StockHandler(db) {
     };
 
     this.updateStock = function(req, res, next) {
-    	var itemId = req.body.itemId;
+    	var itemId = req.body._id;
     	//var description = req.body.description;
     	var price = req.body.price;
 
     	stockDAO.updateStock(itemId, price, function(error) {
     	    if (error) return next(error);
 
-            stockDAO.getAllStocks(function(error, users) {
-				var data;
 
-	    		if (error) return next(error);
 
-	    		data = {
-	    			users: users,
-	    			user: {
-	    				isAdmin: true
-	    			},
-	    			updateSuccess: true
-	    		};
+            stockDAO.getAllStocks(function(error, items) {
+
+                if (error) return next(error);
+
+                return res.render("stock", {
+                    items: items
+                });
+            });
 
 	    		return res.render("stock", data);
 	    	});
