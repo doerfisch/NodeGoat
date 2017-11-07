@@ -7,12 +7,12 @@ function StockHandler(db) {
 
     this.displayStock = function(req, res, next) {
 
-    	stockDAO.getAllNonAdminUsers(function(error, users) {
+    	stockDAO.getAllStocks(function(error, items) {
 
     		if (error) return next(error);
 
     		return res.render("stock", {
-    			users: users,
+    			users: items,
     			user: {
     				isAdmin: true
     			}
@@ -28,7 +28,7 @@ function StockHandler(db) {
     	stockDAO.updateStock(itemId, price, function(error) {
     	    if (error) return next(error);
 
-            stockDAO.getAllNonAdminUsers(function(error, users) {
+            stockDAO.getAllStocks(function(error, users) {
 				var data;
 
 	    		if (error) return next(error);

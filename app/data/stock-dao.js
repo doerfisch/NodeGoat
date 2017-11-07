@@ -10,16 +10,15 @@ function StockDAO(db) {
         return new StockDAO(db);
     }
 
-    var usersCol = db.collection("users");
     var stockCol = db.collection("stock");
 
-    this.getAllNonAdminUsers = function(callback) {
-        usersCol.find({
-            "isAdmin": {
+    this.getAllStocks = function(callback) {
+        stockCol.find({
+            "": {
                 $ne: true
             }
-        }).toArray(function(err, users) {
-            callback(null, users);
+        }).toArray(function(err, items) {
+            callback(null, items);
         });
     };
 
