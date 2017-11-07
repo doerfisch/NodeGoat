@@ -19,7 +19,7 @@ function StockHandler(db) {
     };
 
     this.updateStock = function(req, res, next) {
-    	var itemId = req.body._id;
+    	var itemId = req.body.itemId;
     	//var description = req.body.description;
     	var price = parseInt(req.body.price);
 
