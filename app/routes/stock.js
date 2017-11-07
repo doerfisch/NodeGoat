@@ -5,6 +5,7 @@ function StockHandler(db) {
 
     var stockDAO = new StockDAO(db);
 
+
     this.displayStock = function(req, res, next) {
 
     	stockDAO.getAllStocks(function(error, items) {
@@ -12,7 +13,7 @@ function StockHandler(db) {
     		if (error) return next(error);
 
     		return res.render("stock", {
-    			items: item
+    			items: items
     		});
     	});
     };
